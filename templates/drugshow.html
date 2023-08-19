@@ -1,0 +1,34 @@
+{% include 'header.html' %}
+ <center>
+<div class="container c_v">
+<div class="bg" style="background-color: thistle">
+
+    <br>
+
+    <h1 style="color: green"><b>Лекарства</b></h1><br>
+
+{% for i in object_list %}
+<div class="card" style="width: 70rem;">
+  <div class="card-body">
+    <h5 class="card-title"><b>Лекарство: </b>{{i.name_product}}</h5>
+
+    <p class="card-text"><i>Описание: </i>{{i.description}}</p>
+    <p class="card-text"><i>Цена: </i>{{i.price}}</p>
+      <p>Tags: {% for tag in i.tags.all %}{{ tag.title_tag }}, {% endfor %}   </p>
+
+
+
+
+
+  </div>
+</div>
+    <br>
+{% endfor %}
+</div>
+
+</div>
+</center>
+
+{% include 'footer.html' %}
+</body>
+</html>

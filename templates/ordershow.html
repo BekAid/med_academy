@@ -1,0 +1,33 @@
+{% include 'header.html' %}
+ <center>
+<div class="container c_v">
+<div class="bg" style="background-color: #30d5c8">
+
+    <br>
+
+    <h1 style="color: blue"><b>Заказы</b></h1><br>
+
+{% for i in object_list %}
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i>Лекарство: </i>{{i.product}}</h5>
+
+    <p class="card-text"><i>Статус: </i>{{i.status}}</p>
+    <p class="card-text"><i>Заказчик: </i>{{i.customer}}</p>
+    <p class="card-text"><i>Дата: </i>{{i.date_created}}</p>
+
+
+
+
+  </div>
+</div>
+    <br>
+{% endfor %}
+</div>
+
+</div>
+</center>
+
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% include 'header.html' %}
+<center>
+<div class="container c_v">
+<div class="bg" style="background-color: darkslateblue">
+
+    <br>
+    <h1 style="color: darkred"><b>Преподаватели КГМА</b></h1><br>
+{% for i in object_list %}
+<div class="card" style="width: 18rem;">
+  <img src="{{i.image.url}}" class="card-img-top c_v_a" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+      <p> </p>
+    <p class="card-text">{{i.description}}</p>
+    <a href="/kgmawork/{{i.id}}" class="btn btn-primary">Подробнее</a>
+  </div>
+</div>
+    <br>
+    <hr style="border: 10px solid red;">
+{% endfor %}
+</div>
+
+</div>
+    </center>
+
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% include 'header.html' %}
+<center>
+<h1>{{object.title}}</h1>
+<img src="{{object.image.url}}" alt="" width="450" height="350">
+<p>{{object.description}}</p>
+<p>{{object.speciality}}</p>
+<div>
+        <table border>
+            <tr>
+                <th>Имя</th> <th>Комментарий</th> <th>Оценка</th>
+            </tr>
+
+            {% for j in object.comment_object.all %}
+            <tr>
+                <td>{{j.name}}</td><td>{{j.text}}</td><td> &nbsp;&nbsp;&nbsp;{{j.rating}}</td>
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+    </div>
+
+
+
+
+<button><a href="/kgmawork/{{object.id}}/delete">Удалить</a></button>
+<button><a href="/kgmawork/{{object.id}}/update">Изменить</a></button>
+    <button><a href="/kgmawork/{{object.id}}/commentadd">Добавить комментарий</a></button>
+<p> </p>
+<p>{{object.created_date}}</p>
+</center>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add KGMAWork</title>
+</head>
+<body>
+<center>
+    <form action="/add-work/" method="post" enctype="multipart/form-data">
+    <h1>Добавить Преподавателя</h1>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Add</button>
+    </form>
+</center>
+
+</body>
+</html>
